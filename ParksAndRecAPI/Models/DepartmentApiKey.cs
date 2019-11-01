@@ -7,6 +7,6 @@ namespace ParksAndRecAPI.Models {
         public int DepartmentId { get; set; }
         [Required]
         public string APIKey { get; set; }
-
+        
     }
 }

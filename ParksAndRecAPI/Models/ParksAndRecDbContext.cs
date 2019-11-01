@@ -6,6 +6,8 @@ namespace ParksAndRecAPI.Models {
 
         public DbSet<Park> Parks { get; set; }
         public DbSet<Department> Departments { get; set; }
+
+        public DbSet<DepartmentApiKey> DepartmentApiKeys {get;set;}
         // protected override void OnModelCreating (ModelBuilder builder) {
         //     builder.Entity<Park> ()
         //         .HasData (
