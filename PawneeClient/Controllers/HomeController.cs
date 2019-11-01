@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ParksAndRecClient.Models;
+using PawneeClient.Models;
 
-namespace ParksAndRecClient.Controllers
+namespace PawneeClient.Controllers
 {
     public class HomeController : Controller
     {

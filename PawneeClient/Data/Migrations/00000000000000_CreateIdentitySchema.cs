@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ParksAndRecClient.Data.Migrations
+namespace PawneeClient.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

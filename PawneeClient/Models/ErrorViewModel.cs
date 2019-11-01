@@ -1,6 +1,6 @@
 using System;
 
-namespace ParksAndRecClient.Models
+namespace PawneeClient.Models
 {
     public class ErrorViewModel
     {
