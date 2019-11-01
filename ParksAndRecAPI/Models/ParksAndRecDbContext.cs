@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 
 namespace ParksAndRecAPI.Models {
-    public class ParksAndRecContext : DbContext {
-        public ParksAndRecContext (DbContextOptions<ParksAndRecContext> options) : base (options) { }
+    public class ParksAndRecDbContext : DbContext {
+        public ParksAndRecDbContext (DbContextOptions<ParksAndRecDbContext> options) : base (options) { }
 
         public DbSet<Park> Parks { get; set; }
-        public DbSet<Department> Departments {get;set;}
+        public DbSet<Department> Departments { get; set; }
         // protected override void OnModelCreating (ModelBuilder builder) {
         //     builder.Entity<Park> ()
         //         .HasData (
