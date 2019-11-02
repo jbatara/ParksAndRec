@@ -21,7 +21,7 @@ This application is a ASP.Net web api that gives out the information for differe
 -   Internet browser
 -   Bash Terminal
 -   .NET Core 2.2
--   SQLite
+-   MySQL
 
 ### Cloning the Project Locally
 If you do not have the .NET Core installed on your computer, please install it by following the directions for your operating system [here](https://dotnet.microsoft.com/download). The .NET Core version used for this project is 2.2.
@@ -51,48 +51,45 @@ Once running successfully, you will see a welcome message and the prompt will tu
 ```
 mysql> 
 ```
-### MySql Database Schema
-To reconstruct the database schema and data from the mysql command line interface type in the following commands:
+### MySql Database Schema from migration
+ 
+Open the terminal and navigate to the ParksAndRecAPI folder. Run the following command:
 
-1. Create a new database called salon
 ```
-mysql> CREATE DATABASE salon;
+$dotnet restore
+$dotnet ef database update
 ```
-Some errors you may encounter:
-- ERROR 1007 (HY000): Can't create database 'salon'; database exists
-  In this case, make sure that your previously created salon database is empty, so that you don't overwrite important data. If it is not empty, change the name of the database to something different. _Be sure to note the name of the database, as it will be important for future configuration._
+Dotnet will return a "Done." message once the database has been successfully updated. If you recieve an error "Build failed.", run the command:
+```
+$dotnet build
+```
+to get a more in depth error log.
 
-2. Change the working database to the new 'salon' database you have created. (If your database name is different, replace 'salon' with your database name.)
-```
-mysql> USE salon;
-```
-
-3. Recreate the database schema by pointing to the Salon.sql file. Make sure to replace "[local path]" with the path from the root to the location of the EauClaireSalon project.
-```
-mysql> SOURCE [local path]/EauClaireSalon/HairSalon/Salon.sql;
-```
-
-Now your database has been recreated!
+Once all errors are corrected, you will have an updated MySQL database!
 
 ### Connecting the Application to Local MySql Instance
-Open the _appsettings.json_ file in the Hair Salon folder.
+Open the _appsettings.json_ file in the ParksAndRecAPI folder.
 ```
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=salon;uid=root;pwd=password;"
+    "DefaultConnection": "Server=localhost;Port=3306;database=parksnrec;uid=root;pwd=password;"
   }
 }
 ```
-Change "password" to your MySql password. Please make sure to correct the database name if it was changed.
+Change "password" to your MySql password.
 
 
 ### Running the Application
 
-Change the terminal directory to be in the HairSalon project of the EauClaireSalon folder. Confirming that you have .NET core installed (version 2.2), run the app with the command
+Change the terminal directory to be in the ParksAndRecAPI project of the ParksAndRec folder. Confirming that you have .NET core installed (version 2.2), run the api with the command
 ```
 $dotnet run
 ```
-and enjoy!
+Now that the api is successfully running, in a new terminal window navigate to the PawneeClient folder and run the application with the command
+```
+$dotnet run
+```
+Open the browser to the address [http://localhost:5004](http://localhost:5004) and enjoy!
 
 This project is currently not hosted online.
 
