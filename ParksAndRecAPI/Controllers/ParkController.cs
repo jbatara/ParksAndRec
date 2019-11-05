@@ -22,6 +22,15 @@ namespace ParksAndRecAPI.Controllers
 
     // GET api/park
     [HttpGet]
+
+    public ActionResult<PublicReturnModel> GetRandom()
+    {
+      var query = _db.Parks.AsQueryable();
+      Random rand = new Random();
+      int randomId = rand.Next(query.Count<Park>());
+      return query.FirstOrDefault(p => p.ParkId == randomId).ConvertToPublicViewModel();
+    }
+    [HttpGet]
     public ActionResult<IEnumerable<PublicReturnModel>> Get(int parkId, int departmentId, string parkList)
     {
       var query = _db.Parks.AsQueryable();
@@ -84,5 +93,7 @@ namespace ParksAndRecAPI.Controllers
       _db.Parks.Remove(parkToDelete);
       _db.SaveChanges();
     }
+
+
   }
 }
