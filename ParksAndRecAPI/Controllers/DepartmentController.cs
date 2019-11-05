@@ -16,13 +16,14 @@ namespace ParksAndRecAPI.Controllers {
             _db = db;
         }
 
-        // GET api/park
+        // GET api/park for general information
         [HttpGet]
         public ActionResult<IEnumerable<Department>> Get (int parkId, int departmentId, string departmentList) {
             var query = _db.Departments.AsQueryable ();
             if (parkId != 0) {
                 Park searchedPark = _db.Parks.FirstOrDefault (p => p.ParkId == parkId);
                 query.Where (d => d.Parks.Contains (searchedPark));
+
             }
             if (departmentId != 0) {
                 query.Where (d => d.DepartmentId == departmentId);
