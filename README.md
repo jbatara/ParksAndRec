@@ -51,6 +51,18 @@ Once running successfully, you will see a welcome message and the prompt will tu
 ```
 mysql> 
 ```
+
+### Connecting the Application to Local MySql Instance
+Open the _appsettings.json_ file in the ParksAndRecAPI folder.
+```
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=parksnrec;uid=root;pwd=password;"
+  }
+}
+```
+Change "password" to your MySql password.
+
 ### MySql Database Schema from migration
  
 Open the terminal and navigate to the ParksAndRecAPI folder. Run the following command:
@@ -67,18 +79,6 @@ to get a more in depth error log.
 
 Once all errors are corrected, you will have an updated MySQL database!
 
-### Connecting the Application to Local MySql Instance
-Open the _appsettings.json_ file in the ParksAndRecAPI folder.
-```
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=parksnrec;uid=root;pwd=password;"
-  }
-}
-```
-Change "password" to your MySql password.
-
-
 ### Running the Application
 
 Change the terminal directory to be in the ParksAndRecAPI project of the ParksAndRec folder. Confirming that you have .NET core installed (version 2.2), run the api with the command
@@ -89,7 +89,7 @@ Now that the api is successfully running, in a new terminal window navigate to t
 ```
 $dotnet run
 ```
-Open the browser to the address [http://localhost:5004](http://localhost:5004) and enjoy!
+Open the browser to the address [http://localhost:5004](http://localhost:5004) and enjoy! You can try to make api calls using [Postman](https://www.getpostman.com/).
 
 This project is currently not hosted online.
 
@@ -105,6 +105,8 @@ Please feel free to contact the developer by raising a new [issue](https://githu
 
 * C#
 * .NET Core 2.2
+* Entity Core
+* .Net Core Web Api
 
 ### License
 
