@@ -34,7 +34,7 @@ $git clone repo_url
 with repo_url being the url that was just copied. To open the console app, navigate to the local directory which the online repository was cloned to using the command
 
 ```
-$cd SweetNSavory/SweetNSavory
+$cd ParksAndRec/ParksAndRecAPI/
 ```
 
 ### Setting up a MySql 
@@ -107,6 +107,7 @@ Please feel free to contact the developer by raising a new [issue](https://githu
 * .NET Core 2.2
 * Entity Core
 * .Net Core Web Api
+* MySQL
 
 ### License
 
