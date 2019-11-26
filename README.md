@@ -6,7 +6,7 @@
 
 ## Description
 
-This application is a ASP.Net web api that gives out the information for different state and national parks. This api is intended to be used by any person who wants to enjoy state and national parks, or for local Parks and Recreation departments to more quickly update the status of the parks under their domain. The PawneeClient is an ASP.Net MVC web application that is an example of this local P&R department utilizing the API for their local parks. 
+This application is a ASP.Net Web API that gives out the information for different state and national parks. This api is intended to be used by any person who wants to enjoy state and national parks, or for local Parks and Recreation departments to more quickly update the status of the parks under their domain. The PawneeClient is an ASP.Net MVC web application that is an example of this local P&R department utilizing the API for their local parks. The PawneeClient web application is currently under construction, but the Web API is fully functional!
 
 ## Pawnee Client User Stories
 - As Ron Swanson, you can view all API data, but are unable to delete, put, or post park information due to the "Total Deletion Initiative" of '09. Our records indicate he still tries. Don't give him admin access.
